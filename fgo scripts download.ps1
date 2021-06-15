@@ -38,7 +38,7 @@ if (test-path -path ./script-orig){
 if (test-path -path ./fgo-scripts-parser-master){
 	} else {
 	$jsonParserUrl = "https://codeload.github.com/cipherallies/fgo-scripts-parser/zip/master"
-	Start-BitsTransfer -Source $jsonParserUrl -Destination ./fgo-scripts-parser-master.zip
+	Invoke-WebRequest $jsonParserUrl -OutFile ./fgo-scripts-parser-master.zip
 	Expand-Archive -LiteralPath ./fgo-scripts-parser-master.zip ./
 }
 
